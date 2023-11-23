@@ -1,0 +1,7 @@
+As an asynchronous event-driven JavaScript runtime, express.js is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection, the callback is fired, but if there is no work to be done, express.js will sleep.
+
+This is in contrast to today's more common concurrency model, in which OS threads are employed. Thread-based networking is relatively inefficient and very difficult to use. Furthermore, users of express.js are free from worries of dead-locking the process, since there are no locks. Almost no function in express.js directly performs I/O, so the process never blocks except when the I/O is performed using synchronous methods of express.js standard library. Because nothing blocks, scalable systems are very reasonable to develop in express.js.
+
+express.js is similar in design to, and influenced by, systems like Ruby's Event Machine and Python's Twisted. express.js takes the event model a bit further. It presents an event loop as a runtime construct instead of as a library. In other systems, there is always a blocking call to start the event-loop.
+
+HTTP is a first-class citizen in express.js, designed with streaming and low latency in mind. This makes express.js well suited for the foundation of a web library or framework.
